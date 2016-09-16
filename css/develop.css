@@ -1,6 +1,12 @@
-/* spa-component-input: release */
-.component.input {
+.spa-component-input {
+    box-sizing: border-box;
     width: 250px;
     height: 48px;
     font-size: 24px;
-    color: #000; }
+    color: #000;
+    outline: 1px dashed #005000;
+    outline-offset: -1px; }
+    .spa-component-input.hidden {
+        display: none; }
+    .spa-component-input.focus {
+        outline: 1px dashed red; }

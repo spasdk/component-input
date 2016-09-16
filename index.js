@@ -74,7 +74,7 @@ function Input ( config ) {
     this.type = this.TYPE_TEXT;
 
     // set default className if classList property empty or undefined
-    config.className = 'input ' + (config.className || '');
+    //config.className = 'input ' + (config.className || '');
 
     // parent constructor call
     Component.call(this, config);
@@ -107,6 +107,9 @@ function Input ( config ) {
 // inheritance
 Input.prototype = Object.create(Component.prototype);
 Input.prototype.constructor = Input;
+
+// set component name
+Input.prototype.name = 'spa-component-input';
 
 // input types
 // todo: use number constants

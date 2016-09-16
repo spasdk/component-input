@@ -1,10 +1,14 @@
 // @license The MIT License (MIT)
 // @copyright Stanislav Kalashnik <darkpark.main@gmail.com>
 
-/* spa-component-input: release */
-.component.input {
-    width:        $width;
-    height:       $height;
-    font-size:    $fontSize;
-    color:        #000;
+@import "../node_modules/spa-component/sass/main";
+@import "body";
+
+.spa-component-input {
+    @include spa-component-release;
+    @include spa-component-input;
+
+    @if $DEVELOP {
+        @include spa-component-develop;
+    }
 }

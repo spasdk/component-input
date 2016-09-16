@@ -1,6 +1,8 @@
-/* spa-component-input: release */
-.component.input {
+.spa-component-input {
+    box-sizing: border-box;
     width: 250px;
     height: 48px;
     font-size: 24px;
     color: #000; }
+    .spa-component-input.hidden {
+        display: none; }
