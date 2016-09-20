@@ -47,8 +47,8 @@ function Input ( config ) {
         if ( config.className && typeof config.className !== 'string'   ) {
             throw new Error(__filename + ': wrong or empty config.className');
         }
-        if ( config.$body && !config.$body instanceof HTMLInputElement ) {
-            throw new Error(__filename + ': config.$body must be an HTMLInputElement isntance');
+        if ( config.$body && !(config.$body instanceof HTMLInputElement) ) {
+            throw new Error(__filename + ': config.$body must be an HTMLInputElement instance');
         }
     }
 
