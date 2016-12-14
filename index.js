@@ -42,9 +42,11 @@ function Input ( config ) {
     config = config || {};
 
     if ( DEVELOP ) {
-        if ( typeof config !== 'object' ) { throw new Error(__filename + ': wrong config type'); }
+        if ( typeof config !== 'object' ) {
+            throw new Error(__filename + ': wrong config type');
+        }
         // init parameters checks
-        if ( config.className && typeof config.className !== 'string'   ) {
+        if ( 'className' in config && (!config.className || typeof config.className !== 'string') ) {
             throw new Error(__filename + ': wrong or empty config.className');
         }
         if ( config.$body && !(config.$body instanceof HTMLInputElement) ) {
@@ -197,9 +199,15 @@ Input.prototype.addChar = function ( char, index ) {
     index = (index === undefined) ? this.value.length : index;
 
     if ( DEVELOP ) {
-        if ( index < 0 ) { throw new Error('index must be more than 0 or equal to 0'); }
-        if ( typeof char !== 'string' ) { throw new Error('char must be a string'); }
-        if ( char.length !== 1 ) { throw new Error('char must be a string with length = 1'); }
+        if ( index < 0 ) {
+            throw new Error('index must be more than 0 or equal to 0');
+        }
+        if ( typeof char !== 'string' ) {
+            throw new Error('char must be a string');
+        }
+        if ( char.length !== 1 ) {
+            throw new Error('char must be a string with length = 1');
+        }
     }
 
     // insert char into value
@@ -229,8 +237,12 @@ Input.prototype.removeChar = function ( index ) {
     // non-empty string
     if ( this.value.length > 0 ) {
         if ( DEVELOP ) {
-            if ( index < 0 ) { throw new Error('index must be a positive value'); }
-            if ( index > this.value.length ) { throw new Error('index must be a less than or equal to total length'); }
+            if ( index < 0 ) {
+                throw new Error('index must be a positive value');
+            }
+            if ( index > this.value.length ) {
+                throw new Error('index must be a less than or equal to total length');
+            }
         }
 
         // cut one char from the value
