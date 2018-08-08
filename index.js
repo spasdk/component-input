@@ -134,7 +134,7 @@ Input.prototype.TYPE_SEARCH   = 'search';
  * @param {Event} event generated event
  */
 //keypress: function ( event ) {
-//	this.addChar(String.fromCharCode(event.keyCode));
+//    this.addChar(String.fromCharCode(event.keyCode));
 //}
 //};
 
